@@ -2,14 +2,15 @@
 import pandas as pd
 import os
 import logging
-from csvToDF import csv_to_df, logger
+from csvToDF import csv_to_df
+
+logger = logging.info(__name__)
 
 
 
 def fill_missing_score(file_path):
     try:
         print("Current working directory:", os.getcwd())
-        
         
         df = csv_to_df(file_path)
 
@@ -33,7 +34,7 @@ def fill_missing_score(file_path):
         print("Updated DataFrame:")
         print(df)
 
-        logger.info("Missing scores filled successfully")
+        logger.info("Missing scores filled successfully in csv file")
 
     except FileNotFoundError:
         logger.error("CSV file not found")
