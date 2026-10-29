@@ -15,4 +15,5 @@ df["Grade"] = df["Score"].apply(lambda x: "A" if x < 95 else 'B' if x < 85 else 
 
 df["Status"] = df["Grade"].apply(lambda x: "Fail" if x == 'E' else 'Pass')
 
-print(df)
+df.to_csv("updatedSocre.csv", index=False)
+print("File saved successfully")
